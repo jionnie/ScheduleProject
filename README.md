@@ -29,3 +29,5 @@ https://documenter.getpostman.com/view/48484019/2sB3WpSMJL
 ## ✅ ERD 다이어그램
 
 <img width="677" height="293" alt="image" src="https://github.com/user-attachments/assets/e92522d7-1305-4d9e-9b5e-c4fb03f11008" />
+
+application.properties 복사본 첨부하기
