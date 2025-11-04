@@ -160,4 +160,22 @@ public class ScheduleService {
                 schedule.getModifiedAt()
         );
     }
+
+    /**
+     * 선택한 일정을 삭제한다.
+     *
+     * @param scheduleId 일정 고유 식별자
+     */
+    @Transactional
+    public void delete(Long scheduleId, DeleteScheduleRequest request) {
+        Schedule schedule = scheduleRepository.findById(scheduleId).orElseThrow(
+                () -> new IllegalArgumentException("존재하지 않는 일정입니다.")
+        );
+
+        if (!request.getPassword().equals(schedule.getPassword())) {
+            throw new InvalidPasswordException(); // 비밀번호 불일치 예외 터뜨림
+        }
+
+        scheduleRepository.delete(schedule);
+    }
 }
