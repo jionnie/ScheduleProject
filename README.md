@@ -28,4 +28,4 @@ https://documenter.getpostman.com/view/48484019/2sB3WpSMJL
 
 ## ✅ ERD 다이어그램
 
-<img width="750" height="422" alt="image" src="https://github.com/user-attachments/assets/26325077-011f-4471-96f6-15515b34a4ab" />
+<img width="677" height="293" alt="image" src="https://github.com/user-attachments/assets/e92522d7-1305-4d9e-9b5e-c4fb03f11008" />
