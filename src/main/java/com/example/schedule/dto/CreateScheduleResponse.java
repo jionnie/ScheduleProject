@@ -5,6 +5,11 @@ import lombok.Getter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * 생성된 일정 응답 DTO
+ *
+ * @author jiwon jung
+ */
 @Getter
 public class CreateScheduleResponse {
 

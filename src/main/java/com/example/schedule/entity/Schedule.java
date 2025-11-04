@@ -7,6 +7,12 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
+/**
+ * 일정 정보를 저장하는 엔티티입니다.
+ * 고유 id, 작성자 이름, 비밀번호, 일정 제목, 일정 내용 등의 필드를 포함한다.
+ *
+ * @author jiwon jung
+ */
 @Getter
 @Entity
 @Table(name = "schedules")

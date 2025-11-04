@@ -4,6 +4,11 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 
+/**
+ * 일정 생성 요청 DTO
+ *
+ * @author jiwon jung
+ */
 @Getter
 public class CreateScheduleRequest {
 
