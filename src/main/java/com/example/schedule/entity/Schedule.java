@@ -21,18 +21,18 @@ public class Schedule extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(unique = true, nullable = false)
-    private String name;
+    private Long id;                    // 고유 식별자 id
     @Column(nullable = false)
-    private String password;
+    private String name;                // 작성자 이름
     @Column(nullable = false)
-    private String title;
-    private String content;
+    private String password;            // 비밀번호
     @Column(nullable = false)
-    private LocalDate startDate;
+    private String title;               // 일정 제목
+    private String content;             // 일정 내용
     @Column(nullable = false)
-    private LocalDate endDate;
+    private LocalDate startDate;        // 일정 시작일
+    @Column(nullable = false)
+    private LocalDate endDate;          // 일정 마감일
 
     public Schedule(String name, String password, String title, String content, LocalDate startDate, LocalDate endDate) {
         this.name = name;
@@ -41,5 +41,12 @@ public class Schedule extends BaseEntity {
         this.content = content;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public void update(String name, String title) {
+        if (name != null)
+            this.name = name;
+        if (title != null)
+            this.title = title;
     }
 }
