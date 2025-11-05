@@ -28,6 +28,6 @@
 
 ## ✅ ERD 다이어그램
 
-<img width="677" height="293" alt="image" src="https://github.com/user-attachments/assets/e92522d7-1305-4d9e-9b5e-c4fb03f11008" />
+<img width="947" height="404" alt="image" src="https://github.com/user-attachments/assets/ddb3ce24-0024-4bae-903b-587c61969c54" />
 
 application.properties 복사본 첨부하기
