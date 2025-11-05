@@ -4,6 +4,7 @@ import com.example.schedule.dto.CreateCommentRequest;
 import com.example.schedule.dto.CreateCommentResponse;
 import com.example.schedule.entity.Comment;
 import com.example.schedule.entity.Schedule;
+import com.example.schedule.exception.CommentLimitExceededException;
 import com.example.schedule.repository.CommentRepository;
 import com.example.schedule.repository.ScheduleRepository;
 import lombok.RequiredArgsConstructor;
@@ -43,8 +44,10 @@ public class CommentService {
                 schedule
         );
 
-        // 객체 그래프의 일관성을 위해 둘 다 추가 (List<Comment> comments와 실제 DB)
-        schedule.addComment(comment);
+        if (commentRepository.countByScheduleId(scheduleId) >= 10) {
+            throw new CommentLimitExceededException();
+        }
+
         commentRepository.save(comment);
 
         return new CreateCommentResponse(

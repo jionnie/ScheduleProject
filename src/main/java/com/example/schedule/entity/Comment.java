@@ -30,8 +30,6 @@ public class Comment extends BaseEntity {
 
     private String content;         // 댓글 내용
 
-    // 새로운 Comment 객체는 자신이 어떤 Schedule에 속했는지 모르기 때문에 Schedule 필드의 Setter 필요
-    @Setter
     @ManyToOne
     @JoinColumn(name = "schedule_id", nullable = false)
     private Schedule schedule;      // 댓글이 속하는 일정

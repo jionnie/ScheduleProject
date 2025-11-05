@@ -61,12 +61,4 @@ public class Schedule extends BaseEntity {
         if (title != null)
             this.title = title;
     }
-
-    public void addComment(Comment comment) {
-        if (comments.size() >= 10) {
-            throw new CommentLimitExceededException();
-        }
-
-        comments.add(comment);
-    }
 }
