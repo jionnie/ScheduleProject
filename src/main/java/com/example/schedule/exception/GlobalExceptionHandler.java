@@ -17,11 +17,23 @@ public class GlobalExceptionHandler {
 
     /**
      * 비밀번호 불일치 시 처리
+     * 
      * @param e 비밀번호 불일치 예외 클래스
      * @return 에러 메세지
      */
     @ExceptionHandler(InvalidPasswordException.class)
     public ResponseEntity<String> handleInvalidPassword(InvalidPasswordException e) {
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
+    }
+
+    /**
+     * 댓글이 10개가 넘은 상태에서 댓글 작성 요청 시 처리
+     *
+     * @param e 댓글 개수 초과 요청 예외 클래스
+     * @return 에러 메세지
+     */
+    @ExceptionHandler(CommentLimitExceededException.class)
+    public ResponseEntity<String> handleCommentLimitExceededException(CommentLimitExceededException e) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
     }
 }
