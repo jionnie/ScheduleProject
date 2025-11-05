@@ -83,7 +83,7 @@ public class ScheduleService {
      */
     @Transactional
     public List<GetScheduleResponse> findAll() {
-        List<Schedule> schedules = scheduleRepository.findAll();
+        List<Schedule> schedules = scheduleRepository.findAllByOrderByModifiedAtDesc();
 
         List<GetScheduleResponse> dtos = schedules.stream()
                 .map(schedule -> new GetScheduleResponse(
