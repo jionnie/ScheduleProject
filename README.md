@@ -2,19 +2,39 @@
 
 ## ✅ 프로젝트 소개
 
-이 프로젝트는 일정 관리 CRUD 프로젝트입니다.
+일정 관리 CRUD 프로젝트 <br>
+개발 기간: 2025.11.03~2025.11.06
 
 ## ✅ 개발 환경
 
-- **Language**: Java 17
-- **IDE**: IntelliJ IDEA
 - **OS**: Windows 11
+- **IDE**: IntelliJ IDEA
+- **Language**: Java 17
+- **Build Tool**: Gradle
+- **Version Control**: Git, GitHub
+- **Test Tool**: Postman
+
+## ✅ 기술 스택
+
+- **Language**: Java
+- **Framework**: Spring Boot
+- **ORM**: JPA (Hibernate)
+- **Database**: MySQL
 
 ## ✅ 실행 방법
 
 
 ## ✅ 주요 기능
 
+- 일정 등록
+- 일정 조회
+  - 단 건 조회, 작성자 별 조회, 전체 조회
+  - 해당 일정에 달린 댓글 조회
+- 일정 수정
+  - 비밀번호 일치 시 수정
+- 일정 삭제
+  - 비밀번호 일치 시 삭제 
+- 댓글 등록
 
 ## ✅ 패키지 구조
 
