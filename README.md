@@ -98,5 +98,3 @@ com.example.schedule
 ## ✅ ERD 다이어그램
 
 <img width="947" height="404" alt="image" src="https://github.com/user-attachments/assets/ddb3ce24-0024-4bae-903b-587c61969c54" />
-
-application.properties 복사본 첨부하기
