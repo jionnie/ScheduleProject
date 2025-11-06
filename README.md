@@ -97,4 +97,4 @@ com.example.schedule
 
 ## ✅ ERD 다이어그램
 
-<img width="947" height="404" alt="image" src="https://github.com/user-attachments/assets/ddb3ce24-0024-4bae-903b-587c61969c54" />
+<img width="982" height="418" alt="image" src="https://github.com/user-attachments/assets/8477d6a4-e6f8-445c-9856-986f809b9dd8" />
