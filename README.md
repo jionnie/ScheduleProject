@@ -39,7 +39,35 @@
 ## ✅ 패키지 구조
 
 ```
-
+com.example.schedule
+             ├── controller
+                    ├── CommentController
+                    └── ScheduleController
+             ├── dto
+                    ├── CreateCommentRequest
+                    ├── CreateCommentResponse
+                    ├── CreateScheduleRequest
+                    ├── CreateScheduleResponse
+                    ├── DeleteScheduleRequest
+                    ├── GetCommentResponse
+                    ├── GetScheduleResponse
+                    ├── UpdateScheduleRequest
+                    └── UpdateScheduleResponse
+             ├── entity
+                    ├── BaseEntity
+                    ├── Comment
+                    └── Schedule
+             ├── exception
+                    ├── CommentLimitExceededException
+                    ├── GlobalExceptionHandler
+                    └── InvalidPasswordException
+             ├── repository
+                    ├── CommentRepository
+                    └── ScheduleRepository
+             ├── service
+                    ├── CommentService
+                    └── ScheduleService
+             └── ScheduleApplication
 ```
 
 ## ✅ API 명세서
