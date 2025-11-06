@@ -23,7 +23,16 @@
 
 ## ✅ 실행 방법
 
-- 사전 준비: application.properties에서 데이터베이스 연결 정보 확인
+- 방법 1
+  - 명령 프롬프트 또는 터미널 열기
+  - 프로젝트 경로로 이동
+  - ```./gradlew clean build ```로 프로젝트 빌드
+  - ```java -jar build/libs/schedule-0.0.1-SNAPSHOT.jar```
+
+- 방법 2
+  - 인텔리제이에서 ```ScheduleApplication``` 실행
+ 
+- ⚠️ application.properties에서 데이터베이스 연결 정보 확인
   
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/schedule_db
@@ -35,15 +44,6 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 ```
-
-- 방법 1
-  - 명령 프롬프트 또는 터미널 열기
-  - 프로젝트 경로로 이동
-  - ```./gradlew clean build ```로 프로젝트 빌드
-  - ```java -jar build/libs/schedule-0.0.1-SNAPSHOT.jar```
-
-- 방법 2
-  - 인텔리제이에서 ```ScheduleApplication``` 실행
 
 ## ✅ 주요 기능
 
