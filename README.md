@@ -23,7 +23,7 @@
 
 ## ✅ 실행 방법
 
-- application.properties에서 데이터베이스 연결 정보 확인
+- 사전 준비: application.properties에서 데이터베이스 연결 정보 확인
   
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/schedule_db
