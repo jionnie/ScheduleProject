@@ -57,7 +57,7 @@ spring.jpa.properties.hibernate.format_sql=true
   - 비밀번호 일치 시 삭제 
 - 댓글 등록
 
-## ✅ 패키지 구조
+## ✅ 프로젝트 구조
 
 ```
 com.example.schedule
