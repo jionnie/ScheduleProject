@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * 생성된 일정 조회 DTO
@@ -21,8 +22,9 @@ public class GetScheduleResponse {
     private final LocalDate endDate;
     private final LocalDateTime createdAt;
     private final LocalDateTime modifiedAt;
+    private final List<GetCommentResponse> comments;
 
-    public GetScheduleResponse(Long id, String name, String title, String content, LocalDate startDate, LocalDate endDate, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+    public GetScheduleResponse(Long id, String name, String title, String content, LocalDate startDate, LocalDate endDate, LocalDateTime createdAt, LocalDateTime modifiedAt, List<GetCommentResponse> comments) {
         this.id = id;
         this.name = name;
         this.title = title;
@@ -31,5 +33,6 @@ public class GetScheduleResponse {
         this.endDate = endDate;
         this.createdAt = createdAt;
         this.modifiedAt = modifiedAt;
+        this.comments = comments;
     }
 }

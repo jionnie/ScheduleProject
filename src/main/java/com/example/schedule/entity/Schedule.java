@@ -1,14 +1,11 @@
 package com.example.schedule.entity;
 
-import com.example.schedule.exception.CommentLimitExceededException;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 일정 정보를 저장하는 엔티티
@@ -42,9 +39,6 @@ public class Schedule extends BaseEntity {
     
     @Column(nullable = false, name = "end_date")
     private LocalDate endDate;      // 일정 마감일
-
-    @OneToMany(mappedBy = "schedule", fetch = FetchType.EAGER)
-    private List<Comment> comments = new ArrayList<>();
 
     public Schedule(String name, String password, String title, String content, LocalDate startDate, LocalDate endDate) {
         this.name = name;

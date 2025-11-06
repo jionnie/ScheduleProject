@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,6 +21,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ScheduleService {
 
+    private final CommentService commentService;
     private final ScheduleRepository scheduleRepository;
 
     /**
@@ -58,11 +60,13 @@ public class ScheduleService {
      * @param scheduleId 일정 고유 식별자
      * @return 조회된 일정 DTO
      */
-    @Transactional
+    @Transactional(readOnly = true)
     public GetScheduleResponse findById(Long scheduleId) {
         Schedule schedule = scheduleRepository.findById(scheduleId).orElseThrow(
                 () -> new IllegalArgumentException("존재하지 않는 일정입니다.")
         );
+
+        List<GetCommentResponse> comments = commentService.findAllByScheduleId(scheduleId);
 
         return new GetScheduleResponse(
                 schedule.getId(),
@@ -72,7 +76,8 @@ public class ScheduleService {
                 schedule.getStartDate(),
                 schedule.getEndDate(),
                 schedule.getCreatedAt(),
-                schedule.getModifiedAt()
+                schedule.getModifiedAt(),
+                comments
         );
     }
 
@@ -81,21 +86,27 @@ public class ScheduleService {
      *
      * @return 조회된 전체 일정 목록 리스트
      */
-    @Transactional
+    @Transactional(readOnly = true)
     public List<GetScheduleResponse> findAll() {
         List<Schedule> schedules = scheduleRepository.findAllByOrderByModifiedAtDesc();
+        List<GetCommentResponse> comments;
+        List<GetScheduleResponse> dtos = new ArrayList<>();
 
-        List<GetScheduleResponse> dtos = schedules.stream()
-                .map(schedule -> new GetScheduleResponse(
-                        schedule.getId(),
-                        schedule.getName(),
-                        schedule.getTitle(),
-                        schedule.getContent(),
-                        schedule.getStartDate(),
-                        schedule.getEndDate(),
-                        schedule.getCreatedAt(),
-                        schedule.getModifiedAt()))
-                .toList();
+        for (Schedule schedule : schedules) {
+            comments = commentService.findAllByScheduleId(schedule.getId());
+
+            dtos.add(new GetScheduleResponse(
+                    schedule.getId(),
+                    schedule.getName(),
+                    schedule.getTitle(),
+                    schedule.getContent(),
+                    schedule.getStartDate(),
+                    schedule.getEndDate(),
+                    schedule.getCreatedAt(),
+                    schedule.getModifiedAt(),
+                    comments
+            ));
+        }
 
         return dtos;
     }
@@ -107,21 +118,27 @@ public class ScheduleService {
      * @param name 작성자 이름
      * @return 작성자 이름을 기준으로 조회된 일정 목록 리스트
      */
-    @Transactional
+    @Transactional(readOnly = true)
     public List<GetScheduleResponse> findByName(String name) {
         List<Schedule> schedules = scheduleRepository.findByNameOrderByModifiedAtDesc(name);
+        List<GetCommentResponse> comments;
+        List<GetScheduleResponse> dtos = new ArrayList<>();
 
-        List<GetScheduleResponse> dtos = schedules.stream()
-                .map(schedule -> new GetScheduleResponse(
-                        schedule.getId(),
-                        schedule.getName(),
-                        schedule.getTitle(),
-                        schedule.getContent(),
-                        schedule.getStartDate(),
-                        schedule.getEndDate(),
-                        schedule.getCreatedAt(),
-                        schedule.getModifiedAt()))
-                .toList();
+        for (Schedule schedule : schedules) {
+            comments = commentService.findAllByScheduleId(schedule.getId());
+
+            dtos.add(new GetScheduleResponse(
+                    schedule.getId(),
+                    schedule.getName(),
+                    schedule.getTitle(),
+                    schedule.getContent(),
+                    schedule.getStartDate(),
+                    schedule.getEndDate(),
+                    schedule.getCreatedAt(),
+                    schedule.getModifiedAt(),
+                    comments
+            ));
+        }
 
         return dtos;
     }
