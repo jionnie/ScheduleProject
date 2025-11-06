@@ -93,7 +93,7 @@ com.example.schedule
 
 ## ✅ API 명세서
 
-[https://documenter.getpostman.com/view/48484019/2sB3WpSMJL](https://documenter.getpostman.com/view/48484019/2sB3WpSMJL)
+https://documenter.getpostman.com/view/48484019/2sB3WpSMJL
 
 ## ✅ ERD 다이어그램
 
