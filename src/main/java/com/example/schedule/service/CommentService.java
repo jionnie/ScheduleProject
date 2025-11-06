@@ -68,6 +68,8 @@ public class CommentService {
     /**
      * 하나의 일정에 달린 댓글을 전체 조회한다.
      *
+     * @param scheduleId 일정 id
+     * @return 해당 일정 id를 가진 댓글 응답 DTO 리스트
      */
     @Transactional(readOnly = true)
     public List<GetCommentResponse> findAllByScheduleId(Long scheduleId) {
